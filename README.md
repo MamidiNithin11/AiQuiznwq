@@ -210,18 +210,7 @@ export const getQuizById = (id) => axios.get(`${API_BASE}/quiz/${id}`);
 
 ### 🔹 Generate Quiz
 
-
 <img width="1893" height="967" alt="Screenshot 2025-10-26 011931" src="https://github.com/user-attachments/assets/54fd0593-5769-4827-855e-882fc7cedfdd" />
-
-__________________________________________________________________________________
-
-<img width="1328" height="966" alt="Screenshot 2025-10-26 012001" src="https://github.com/user-attachments/assets/ca402778-d585-4ccf-b7ac-fbc0a486145a" />
-
-
-__________________________________________________________________________________
-
-<img width="961" height="964" alt="Screenshot 2025-10-26 012100" src="https://github.com/user-attachments/assets/ad001f96-cc01-4f74-bb6b-326c9c1ae0ed" />
-
 __________________________________________________________________________________
 
 ### Quiz Key Contents
