@@ -202,17 +202,43 @@ export const getQuizById = (id) => axios.get(`${API_BASE}/quiz/${id}`);
 
 ## 🧩 Key Features in Action
 
+#### Quiz Home page:
+
+
+<img width="1902" height="963" alt="Screenshot 2025-10-26 021521" src="https://github.com/user-attachments/assets/c98ac581-6164-4e72-9f0d-39989f2eba54" />
+
+
 ### 🔹 Generate Quiz
 
-<img width="900" src="https://github.com/user-attachments/assets/c467f4ea-b4f8-4817-b8b7-452de7ee3e6d" />
+
+<img width="1893" height="967" alt="Screenshot 2025-10-26 011931" src="https://github.com/user-attachments/assets/54fd0593-5769-4827-855e-882fc7cedfdd" />
+
+__________________________________________________________________________________
+
+<img width="1328" height="966" alt="Screenshot 2025-10-26 012001" src="https://github.com/user-attachments/assets/ca402778-d585-4ccf-b7ac-fbc0a486145a" />
+
+
+__________________________________________________________________________________
+
+<img width="961" height="964" alt="Screenshot 2025-10-26 012100" src="https://github.com/user-attachments/assets/ad001f96-cc01-4f74-bb6b-326c9c1ae0ed" />
+
+__________________________________________________________________________________
+
+### Quiz Key Contents
+
+<img width="910" height="954" alt="Screenshot 2025-10-26 012111" src="https://github.com/user-attachments/assets/ecac02a0-20e5-4a54-bd75-9b984816c992" />
+
+#### Quiz Score Based Result :
+
+<img width="1261" height="952" alt="Screenshot 2025-10-26 012140" src="https://github.com/user-attachments/assets/d97dc6a5-a56d-401d-8a85-2a85de76b081" />
+
+### Correct answer with Green and Wrong answer Red after Submission of Qiaz:
+<img width="1318" height="962" alt="Screenshot 2025-10-26 012156" src="https://github.com/user-attachments/assets/13e702f3-65c8-4520-b611-2ab237a77855" />
+
 
 ### 🔹 View Quiz History
 
-<img width="900" src="https://github.com/user-attachments/assets/e940f35e-d080-4aea-8f09-a5ab86ba5c79" />
-
-### 🔹 Detailed Quiz Display
-
-<img width="900" src="https://github.com/user-attachments/assets/8a60b449-77a5-4147-bebc-aee645107a67" />
+<img width="1414" height="951" alt="Screenshot 2025-10-26 012212" src="https://github.com/user-attachments/assets/c1c63178-1c0e-4c45-9cc5-f7d685ff9e32" />
 
 ---
 
