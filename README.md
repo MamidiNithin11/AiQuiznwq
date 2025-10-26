@@ -247,33 +247,6 @@ ________________________________________________________________________________
 
 ---
 
-## 🧠 Future Enhancements
-
-* 🔐 User authentication & personalized quiz dashboards
-* 🏆 Leaderboard and quiz scoring system
-* 📂 Document-based custom quiz generation
-* 🌙 Dark mode UI
-* 📄 Export quizzes to PDF
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-
-   ```bash
-   git checkout -b feature/new-ui
-   ```
-3. Commit your changes
-
-   ```bash
-   git commit -m "Add new quiz result UI"
-   ```
-4. Push and open a Pull Request 🎯
-
----
-
 ## 🛡️ License
 
 Licensed under the **MIT License** — free to use and modify.
