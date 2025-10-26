@@ -1,0 +1,5 @@
+
+{
+  "name": "Wikipedia Quiz Generator",
+  "description": "An interactive web application that generates quizzes from any Wikipedia article. Users can test their knowledge and view a history of previously generated quizzes."
+}
