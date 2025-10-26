@@ -221,7 +221,7 @@ ________________________________________________________________________________
 
 <img width="1261" height="952" alt="Screenshot 2025-10-26 012140" src="https://github.com/user-attachments/assets/d97dc6a5-a56d-401d-8a85-2a85de76b081" />
 
-### Correct answer with Green and Wrong answer Red after Submission of Qiaz:
+### Correct answer with Green and Wrong answer Red after Submission of Quiz:
 <img width="1318" height="962" alt="Screenshot 2025-10-26 012156" src="https://github.com/user-attachments/assets/13e702f3-65c8-4520-b611-2ab237a77855" />
 
 
