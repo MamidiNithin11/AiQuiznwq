@@ -1,132 +1,102 @@
-Perfect 🔥 — here’s a **complete, professional `README.md`** for your **AI Wiki Quiz Generator** project.
-
-It’s written in clean Markdown — ready to upload to **GitHub** — and includes setup, environment variables, usage, project structure, API routes, and contribution details.
-
----
-
-## 🧠 **README.md**
-
-```markdown
 # 🧠 AI Wiki Quiz Generator
 
-An intelligent web application that scrapes Wikipedia articles, uses Google's Gemini AI to generate multiple-choice quizzes, and stores them in a PostgreSQL database.  
-The frontend (built with **Vite + React**) lets users input any Wikipedia URL, view AI-generated quizzes, and revisit their quiz history.
+**An intelligent full-stack web app that turns any Wikipedia article into an interactive multiple-choice quiz using Gemini AI.**
+Built with **FastAPI**, **LangChain**, **PostgreSQL**, and a modern **Vite + React + TailwindCSS** frontend.
 
 ---
 
 ## 🚀 Features
 
-✅ Scrape Wikipedia pages automatically  
-✅ Generate quizzes using **Gemini AI (LangChain integration)**  
-✅ Store quizzes in **PostgreSQL**  
-✅ RESTful backend powered by **FastAPI**  
-✅ Frontend built with **Vite + React + TailwindCSS**  
-✅ Quiz history tracking and detailed quiz view  
-✅ Full CORS support for smooth frontend-backend communication  
+* 🔍 **Automatic Wikipedia Scraping** — Extracts structured content from any Wikipedia URL.
+* 🤖 **AI Quiz Generation** — Uses **Google Gemini (via LangChain)** to generate high-quality MCQs.
+* 💾 **Data Persistence** — Stores quizzes and history in **PostgreSQL**.
+* ⚡ **Modern RESTful API** — Built using **FastAPI** with CORS enabled for frontend integration.
+* 🧩 **Frontend (Vite + React)** — Responsive, elegant UI with quiz generation and history view.
+* 📚 **Quiz History** — Access previously generated quizzes anytime.
+* 🌍 **Full Stack Integration** — Seamless communication between backend and frontend.
 
 ---
 
-## 🧩 Tech Stack
+## 🧠 Tech Stack
 
-| Layer | Technologies Used |
-|-------|-------------------|
-| **Frontend** | Vite, React, TailwindCSS, Axios |
-| **Backend** | FastAPI, LangChain, SQLAlchemy |
-| **AI Model** | Gemini 1.5 / 2.5 (via Google Generative AI) |
-| **Database** | PostgreSQL |
-| **Environment** | Python 3.10+ |
+| Layer           | Technologies                     |
+| --------------- | -------------------------------- |
+| **Frontend**    | React (Vite), TailwindCSS, Axios |
+| **Backend**     | FastAPI, LangChain, SQLAlchemy   |
+| **AI Model**    | Google Gemini 1.5 / 2.5          |
+| **Database**    | PostgreSQL                       |
+| **Environment** | Python 3.10+                     |
 
 ---
 
 ## 📁 Project Structure
 
-
-aai-quiz-generators/
+```bash
+ai-quiz-generator/
 ├── backend/
 │   ├── __init__.py
 │   ├── database.py
 │   ├── llm_quiz_generator.py
 │   ├── main.py
 │   ├── models.py
-│   ├── requirements.txt
 │   ├── scraper.py
-│   └── __pycache__/
+│   ├── requirements.txt
+│   └── .env
 └── frontend/
     ├── App.jsx
-    ├── index.html
     ├── index.jsx
-    ├── metadata.json
-    ├── package.json
-    ├── README.md
-    ├── types.ts
     ├── vite.config.ts
-    ├── assets/
     ├── components/
     │   ├── GenerateQuizTab.jsx
     │   ├── HistoryTab.jsx
-    │   ├── Modal.jsx
     │   ├── QuizDisplay.jsx
-    │   └── icons/
-    │       ├── BookOpenIcon.jsx
-    │       ├── CheckIcon.jsx
-    │       ├── ClipboardIcon.jsx
-    │       ├── ClockIcon.jsx
-    │       ├── CogIcon.jsx
-    │       ├── ExternalLinkIcon.jsx
-    │       ├── HistoryIcon.jsx
-    │       ├── InfoIcon.jsx
-    │       ├── LoaderIcon.jsx
-    │       ├── TrophyIcon.jsx
-    │       └── XIcon.jsx
+    │   └── Modal.jsx
     └── services/
         └── api.js
+```
 
-    
+---
 
 ## ⚙️ Backend Setup (FastAPI)
 
-### 1️⃣ Clone the repository
+### 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/<your-username>/ai-quiz-generator.git
 cd ai-quiz-generator/backend
-````
+```
 
-### 2️⃣ Create a virtual environment
+### 2️⃣ Create Virtual Environment
 
 ```bash
 python -m venv venv
-.\venv\Scripts\activate      # Windows
+.\venv\Scripts\activate   # (Windows)
 ```
 
-### 3️⃣ Install dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Configure environment variables
+### 4️⃣ Configure Environment Variables
 
-Create a `.env` file inside `/backend`:
+Create a `.env` file in `/backend`:
 
 ```env
 DATABASE_URL=postgresql+psycopg2://username:password@localhost:5432/quizdb
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-> 🧠 Note: Replace `username`, `password`, and `quizdb` with your actual PostgreSQL credentials.
+> ⚠️ Replace placeholders with your PostgreSQL credentials and valid Gemini API key.
 
-### 5️⃣ Initialize the database
-
-Make sure PostgreSQL is running, then FastAPI will auto-create tables when starting.
-
-### 6️⃣ Run the backend server
+### 5️⃣ Run Backend Server
 
 ```bash
 uvicorn main:app --reload
 ```
 
-Your backend will start at 👉 **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+Your API is live at 👉 **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
 
 ---
 
@@ -136,80 +106,85 @@ Your backend will start at 👉 **[http://127.0.0.1:8000](http://127.0.0.1:8000)
 | ------ | ---------------- | ---------------------------------- |
 | `GET`  | `/`              | Health check                       |
 | `POST` | `/generate_quiz` | Generate quiz from a Wikipedia URL |
-| `GET`  | `/history`       | List all saved quizzes             |
-| `GET`  | `/quiz/{id}`     | Get full quiz details by ID        |
+| `GET`  | `/history`       | Fetch all saved quizzes            |
+| `GET`  | `/quiz/{id}`     | Retrieve quiz details by ID        |
 
-### 🧾 Example Response (`/generate_quiz`)
+### 🧾 Example Response
 
 ```json
 {
   "id": 1,
-  "url": "https://en.wikipedia.org/wiki/Alan_Turing",
   "title": "Alan Turing",
-  "summary": "Alan Turing was a British mathematician...",
-  "key_entities": {
-    "people": ["Alan Turing", "Alonzo Church"],
-    "organizations": ["University of Cambridge", "Bletchley Park"],
-    "locations": ["United Kingdom"]
-  },
-  "sections": ["Early life", "World War II", "Legacy"],
+  "url": "https://en.wikipedia.org/wiki/Alan_Turing",
+  "summary": "Alan Turing was a British mathematician and computer scientist...",
   "quiz": [
     {
       "question": "Where did Alan Turing study?",
       "options": ["Harvard", "Cambridge", "Oxford", "Princeton"],
       "answer": "Cambridge",
       "difficulty": "easy",
-      "explanation": "Mentioned in the 'Early life' section."
+      "explanation": "Mentioned in 'Early life' section."
     }
-  ],
-  "related_topics": ["Cryptography", "Enigma machine", "Computer science history"]
+  ]
 }
 ```
 
 ---
 
-## 💻 Frontend Setup (Vite + React)
+## 🖥️ Frontend Setup (Vite + React)
 
-### 1️⃣ Navigate to frontend
+### 1️⃣ Create Project
 
 ```bash
-cd ../frontend
+npm create vite@latest frontend
+# Select: React → JavaScript
+cd frontend
 ```
 
-### 2️⃣ Install dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 npm install
+npm install axios
 ```
 
-### 3️⃣ Start the Vite development server
+### 3️⃣ Setup TailwindCSS
 
 ```bash
-npm run dev
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-Your frontend will run on 👉 **[http://localhost:5173](http://localhost:5173)**
+Update `tailwind.config.js`:
 
-### 4️⃣ Configure backend URL (if needed)
+```js
+content: ["./index.html", "./src/**/*.{js,jsx}"]
+```
 
-In `src/services/api.js`, ensure this matches your backend:
+Import into `index.css`:
 
-```javascript
-export const API_BASE_URL = "http://127.0.0.1:8000";
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ---
 
-## 🔗 Frontend API Calls
+## 🔗 API Integration (frontend/services/api.js)
 
-* **Generate Quiz:**
-  Sends POST → `/generate_quiz?url=<Wikipedia_URL>`
+```js
+import axios from "axios";
 
-* **Fetch History:**
-  GET → `/history`
+const API_BASE = "http://127.0.0.1:8000";
 
-* **Fetch Quiz by ID:**
-  GET → `/quiz/<id>`
+export const generateQuiz = (url) =>
+  axios.post(`${API_BASE}/generate_quiz?url=${encodeURIComponent(url)}`);
+
+export const getHistory = () => axios.get(`${API_BASE}/history`);
+
+export const getQuizById = (id) => axios.get(`${API_BASE}/quiz/${id}`);
+```
 
 ---
 
@@ -220,122 +195,79 @@ export const API_BASE_URL = "http://127.0.0.1:8000";
 | Python     | 3.10+   |
 | Node.js    | 18+     |
 | PostgreSQL | 14+     |
-| Vite       | 5.x     |
 | FastAPI    | 0.110+  |
+| Vite       | 5.x     |
+
+---
+
+## 🧩 Key Features in Action
+
+### 🔹 Generate Quiz
+
+<img width="900" src="https://github.com/user-attachments/assets/c467f4ea-b4f8-4817-b8b7-452de7ee3e6d" />
+
+### 🔹 View Quiz History
+
+<img width="900" src="https://github.com/user-attachments/assets/e940f35e-d080-4aea-8f09-a5ab86ba5c79" />
+
+### 🔹 Detailed Quiz Display
+
+<img width="900" src="https://github.com/user-attachments/assets/8a60b449-77a5-4147-bebc-aee645107a67" />
 
 ---
 
 ## 🧑‍💻 Development Notes
 
-* The backend automatically creates tables using SQLAlchemy.
-* Use the `/docs` endpoint to test all APIs via Swagger UI.
-* If quiz generation fails, check your Gemini API key and ensure `.env` is configured correctly.
+* The backend automatically creates all tables using:
 
----
+  ```python
+  Base.metadata.create_all(bind=engine)
+  ```
+* Swagger UI available at → **`/docs`**
+* If quiz generation fails:
 
-## 📦 Example `.env` File
-
-```env
-# Backend environment
-DATABASE_URL=postgresql+psycopg2://postgres:password@localhost:5432/quizdb
-GEMINI_API_KEY=AIzaSyExampleKey
-```
-
----
-
-## 🤝 Contributing
-
-1. Fork this repo
-2. Create a feature branch (`feature/new-ui`)
-3. Commit changes (`git commit -m "Add new quiz result UI"`)
-4. Push to your branch and open a Pull Request 🎯
+  * Verify your Gemini API key
+  * Check `.env` configuration
+  * Ensure your database connection is active
 
 ---
 
 ## 🧠 Future Enhancements
 
-* User authentication (login-based quiz tracking)
-* Leaderboard system
-* Custom quiz generation from uploaded documents
-* Dark mode UI
-* Export quizzes to PDF
+* 🔐 User authentication & personalized quiz dashboards
+* 🏆 Leaderboard and quiz scoring system
+* 📂 Document-based custom quiz generation
+* 🌙 Dark mode UI
+* 📄 Export quizzes to PDF
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+
+   ```bash
+   git checkout -b feature/new-ui
+   ```
+3. Commit your changes
+
+   ```bash
+   git commit -m "Add new quiz result UI"
+   ```
+4. Push and open a Pull Request 🎯
 
 ---
 
 ## 🛡️ License
 
-This project is licensed under the **MIT License**.
-Feel free to use, modify, and distribute for personal or commercial use.
+Licensed under the **MIT License** — free to use and modify.
 
 ---
 
 ## 💬 Credits
 
-Developed by **[Your Name]**
-🧠 Powered by **Gemini AI + FastAPI + Vite React**
+Developed by MamidiNithin11
+🧠 Powered by **Gemini AI**, **FastAPI**, and **React (Vite + TailwindCSS)**
 
 
-outpus:
-
-<img width="1915" height="971" alt="Screenshot 2025-10-26 021429" src="https://github.com/user-attachments/assets/c467f4ea-b4f8-4817-b8b7-452de7ee3e6d" />
-
-_______________________________________________________________________________________________________________________________________________________________
-
-<img width="1902" height="963" alt="Screenshot 2025-10-26 021521" src="https://github.com/user-attachments/assets/e940f35e-d080-4aea-8f09-a5ab86ba5c79" />
-
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-<img width="1328" height="966" alt="Screenshot 2025-10-26 012001" src="https://github.com/user-attachments/assets/8a60b449-77a5-4147-bebc-aee645107a67" />
-
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-<img width="1261" height="952" alt="Screenshot 2025-10-26 012140" src="https://github.com/user-attachments/assets/155c0b08-e1ea-4933-9b01-8427a360c1af" />
-
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-<img width="1318" height="962" alt="Screenshot 2025-10-26 012156" src="https://github.com/user-attachments/assets/41c6bc63-b4cf-454d-b220-11d7e24220a7" />
-
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-
-<img width="1414" height="951" alt="Screenshot 2025-10-26 012212" src="https://github.com/user-attachments/assets/66a4243e-4c86-47ce-be93-43856b48bc19" />
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-<img width="1428" height="947" alt="Screenshot 2025-10-26 012232" src="https://github.com/user-attachments/assets/a51c0ce0-05d9-4427-9644-4f382571e3c3" />
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-<img width="910" height="954" alt="Screenshot 2025-10-26 012111" src="https://github.com/user-attachments/assets/b0fd47d1-4c8d-42ba-9534-d6c6c8395ca7" />
-_______________________________________________________________________________________________________________________________________________________________
-
-
-
-
-<img width="961" height="964" alt="Screenshot 2025-10-26 012100" src="https://github.com/user-attachments/assets/360f78cc-41ae-4daf-b95c-c2d1d95522ad" />
-
-
-
-
-
-### ✅ Tips Before Pushing to GitHub
-
-1. Place this file in your project root as `README.md`.  
-2. Run:
-   ```bash
-   git add .
-   git commit -m "Add detailed README file"
-   git push origin main
-
-
-3. On GitHub, it will automatically render beautifully on your repo’s main page.
